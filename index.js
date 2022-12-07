@@ -1,3 +1,13 @@
+const row = document.querySelector(".row");
+const products = document.querySelector(".products")
+//row.innerText = null;
+
+
+// 1. recorrer los productos
+// 2. dibujar/crear un nodo row? 
+// 3. agregarle el maquetado necesario <=
+
+
 const data = {
     total: 280,
     shirts: [
@@ -35,4 +45,30 @@ const data = {
       }
     ]
   };
+  
+  function createRow() {
+    const newDiv = document.createElement("div");
+    newDiv.className = "row";
+    products.appendChild(newDiv)
+
+    const clone = row.cloneNode(true);
+    newDiv.appendChild(clone)
+    console.log(products)
+  }
+  data.shirts.forEach(createRow)
+  row.innerText = null;
+
+  /* me da 5 resultados
+  function createRow() {
+    const newDiv = document.createElement("div");
+    newDiv.className = "row";
+    const clone = row.cloneNode(true);
+    products.appendChild(newDiv)
+    newDiv.appendChild(clone)
+    console.log(products)
+  }
+  
+  data.shirts.forEach(createRow)
+  */
+
   
