@@ -1,6 +1,6 @@
 const row = document.querySelector(".row");
 const products = document.querySelector(".products")
-//row.innerText = null;
+const productImage = document.querySelector("img");
 
 
 // 1. recorrer los productos
@@ -46,29 +46,26 @@ const data = {
     ]
   };
   
-  function createRow() {
-    const newDiv = document.createElement("div");
-    newDiv.className = "row";
-    products.appendChild(newDiv)
+function createRow() {
+  const newDiv = document.createElement("div");
+  newDiv.className = "row";
+  products.appendChild(newDiv)
 
-    const clone = row.cloneNode(true);
-    newDiv.appendChild(clone)
-    console.log(products)
+  const clone = row.cloneNode(true);
+  newDiv.appendChild(clone)
+
+}
+data.shirts.forEach(createRow)
+
+
+//obtiene el url de las imagenes
+  for (const key in data) {
+    if (key === "shirts") {
+        for (const key2 in data[key]) {
+          console.log(data[key][key2].img)
+        } 
+    } 
   }
-  data.shirts.forEach(createRow)
-  row.innerText = null;
 
-  /* me da 5 resultados
-  function createRow() {
-    const newDiv = document.createElement("div");
-    newDiv.className = "row";
-    const clone = row.cloneNode(true);
-    products.appendChild(newDiv)
-    newDiv.appendChild(clone)
-    console.log(products)
-  }
-  
-  data.shirts.forEach(createRow)
-  */
-
+row.innerText = null;
   
