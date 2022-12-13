@@ -38,23 +38,53 @@ const data = {
     }
   ]
 };
-var imagenesPlayeras=[]
+//var imagenesPlayeras=[]
 const playeras = data.shirts
 
 
 function createRow() {
   const clone = row.cloneNode(true);
   products.appendChild(clone)
-
 }
 
-playeras.forEach(function(playera){
-  imagenesPlayeras.push(playera.img)
-});
+for(var i=0; i < playeras.length - 1; i++) {
+  createRow(data.shirts)
+}
+
+var list = document.getElementsByClassName("row");
+for (var i=0; i < list.length; i++) {
+  list[i].classList.add(i)
+}
+console.log(list[0].className)
+
+// playeras.forEach(function(playera){
+//   imagenesPlayeras.push(playera.title)
+//   imagenesPlayeras.push(playera.img)
+//   imagenesPlayeras.push(playera.price)
+// });
+
+//data.shirts.forEach(createRow)
+
+//console.log(imagenesPlayeras)
+// Añadir elementos al html
+// function addElement() {
+//   const newDiv = document.createElement("div");
+//   const newimg = document.createElement("img");
+//   const newp = document.createElement("p");
+//   newDiv.appendChild(newimg);
+//   products.appendChild(newDiv);
+//   newDiv.appendChild(newp);
+//   const newSpan = document.createElement("span");
+//   const newSpan2 = document.createElement("span");
+//   const newButton = document.createElement("button");
+//   newp.appendChild(newSpan);
+//   newp.appendChild(newSpan2);
+//   newp.appendChild(newButton);
+// }
+
+// addElement(document.body)
 
 
-data.shirts.forEach(createRow)
-console.log(productImage)
 //SOLUCION PRIMERA
 
 // const row = document.querySelector(".row");
